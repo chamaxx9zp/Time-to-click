@@ -22,6 +22,8 @@
 
 <body>
 
+    <p>You Get <span id = "time"></span></p>
+
     <div id="shape"></div>
 
     <script type="text/javascript">
@@ -33,7 +35,8 @@
             document.getElementById("shape").style.display = "none"
             var end = new Date().getTime() ;
             var time = (end - start) / 1000 ;
-            alert(time);
+            //alert(time);
+            document.getElementById("time").innerHTML = time + "s"
         }
         
 
