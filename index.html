@@ -15,21 +15,26 @@
             position: relative;
 
         }
-
-
     </style>
 
 </head>
-
 <body>
 
-    <p>You Get <span id = "time"></span></p>
-
+    <p>You Get <span id = "time"> </span></p>
     <div id="shape"></div>
 
     <script type="text/javascript">
 
         let start = new Date().getTime();
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
 
         function shapeAppear(){
             let top = Math.random() * 550 ;
@@ -50,25 +55,25 @@
             document.getElementById("shape").style.height = width + "px" ;
 
             document.getElementById("shape").style.display = "block";
+            document.getElementById("shape").style.backgroundColor = getRandomColor();
             start = new Date().getTime();
         }
 
         function shapeAppearDelay(){
-        setTimeout(shapeAppear, Math.random()* 1500);
+        setTimeout(shapeAppear, Math.random()* 1125);
         }
 
         shapeAppearDelay()
+        
         document.getElementById("shape").onclick = function(){
             document.getElementById("shape").style.display = "none"
             let end = new Date().getTime() ;
             let time = (end - start) / 1000 ;
             //alert(time);
-            document.getElementById("time").innerHTML = time + "s" ;
+            document.getElementById("time").innerHTML = time + " Seconds to get that Object" ;
             //setTimeout(shapeAppear, Math.random()* 2500);
             shapeAppearDelay()
         }
-        
-
 
     </script>
 </body>
