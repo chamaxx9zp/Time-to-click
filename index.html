@@ -13,6 +13,7 @@
             width: 100px;
             height: 100px;
             background-color: green;
+            display: none;
         }
 
 
@@ -30,8 +31,14 @@
 
         var start = new Date().getTime();
 
-        document.getElementById("shape").onclick = function(){
+        function shapeAppear(){
+            document.getElementById("shape").style.display = "block";
+            var start = new Date().getTime();
+        }
 
+        setTimeout(shapeAppear,3000);
+
+        document.getElementById("shape").onclick = function(){
             document.getElementById("shape").style.display = "none"
             var end = new Date().getTime() ;
             var time = (end - start) / 1000 ;
