@@ -36,7 +36,7 @@
             var start = new Date().getTime();
         }
 
-        setTimeout(shapeAppear,3000);
+        setTimeout(shapeAppear, Math.random()* 2500);
 
         document.getElementById("shape").onclick = function(){
             document.getElementById("shape").style.display = "none"
