@@ -13,6 +13,7 @@
             width: 100px;
             height: 100px;
             background-color: green;
+            display: none;
         }
 
 
@@ -22,18 +23,32 @@
 
 <body>
 
+    <p>You Get <span id = "time"></span></p>
+
     <div id="shape"></div>
 
     <script type="text/javascript">
 
-        var start = new Date().getTime();
+        let start = new Date().getTime();
 
+        function shapeAppear(){
+            document.getElementById("shape").style.display = "block";
+            start = new Date().getTime();
+        }
+
+        function shapeAppearDelay(){
+        setTimeout(shapeAppear, Math.random()* 1500);
+        }
+
+        shapeAppearDelay()
         document.getElementById("shape").onclick = function(){
-
             document.getElementById("shape").style.display = "none"
-            var end = new Date().getTime() ;
-            var time = (end - start) / 1000 ;
-            alert(time);
+            let end = new Date().getTime() ;
+            let time = (end - start) / 1000 ;
+            //alert(time);
+            document.getElementById("time").innerHTML = time + "s" ;
+            //setTimeout(shapeAppear, Math.random()* 2500);
+            shapeAppearDelay()
         }
         
 
