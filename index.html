@@ -14,6 +14,8 @@
             height: 100px;
             background-color: green;
             display: none;
+            position: relative;
+
         }
 
 
@@ -32,6 +34,10 @@
         let start = new Date().getTime();
 
         function shapeAppear(){
+            let top = Math.random() * 550 ;
+            let left = Math.random() * 550 ;
+            document.getElementById("shape").style.top = top + "px" ;
+            document.getElementById("shape").style.left = left + "px" ;
             document.getElementById("shape").style.display = "block";
             start = new Date().getTime();
         }
