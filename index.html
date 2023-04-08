@@ -43,7 +43,8 @@
             var end = new Date().getTime() ;
             var time = (end - start) / 1000 ;
             //alert(time);
-            document.getElementById("time").innerHTML = time + "s"
+            document.getElementById("time").innerHTML = time + "s" ;
+            setTimeout(shapeAppear, Math.random()* 2500);
         }
         
 
